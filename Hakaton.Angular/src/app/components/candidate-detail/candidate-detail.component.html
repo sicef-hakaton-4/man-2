@@ -1,0 +1,55 @@
+<!-- <div class="col-md-4">
+        <div class="container">
+                <img src="{{candidate.picture}}" alt="image" />
+                <dl class="dl-horizontal">
+                    <dt>Name: </dt><dd>{{candidate.firstName}} {{candidate.lastName}}</dd>
+                    <dt>E-mail: </dt><dd><a href="mailto:{{candidate.email}}">{{candidate.email}}</a></dd>
+                    <dt>LinkedIn: </dt><dd><a href="{{candidate.linkedIn}}">Click</a></dd>
+                    <dt>CV: </dt><dd><a href="{{candidate.cv.webkitRelativePath}}">Click</a></dd>
+                    <dt>Total rating: </dt><dd>{{candidate.points}}</dd>
+                </dl>
+                <div>
+                    <h4>Candidate's technologies:</h4>
+                    <span class="techContainer" *ngFor="let tech of candidate.technologies">{{tech}}</span>
+                    <br />
+                    <h4>Candidate's projects:</h4>
+                    <div class="projectContainer" *ngFor="let project of candidate.projects; let i = index">
+                        <h6>{{i + 1}}</h6>
+                        <dl class="dl-horizontal">
+                            <dt>Name: </dt><dd>{{project.name}}</dd>
+                            <dt>Description: </dt><dd>{{project.description}}</dd>
+                            <dt>Repo: </dt><dd><a href="{{project.link}}">Click</a></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+</div> -->
+<div class="card" style="margin:10px">
+        <h3 class="card-header">{{candidate.firstName}} {{candidate.lastName}}</h3>
+        <div class="card-body">
+          <h5 class="card-title">I strive to succeed</h5>
+          <h6 class="card-subtitle text-muted">{{candidate.technologies}}</h6>
+        </div>
+        <div style="align-content:center">
+                <img style="height: 250px; width: 50%; margin: 0 auto; display: block;" src="https://londonentrepreneursnetwork.com/public/assets/frontend/profile_image/user-icon-png-pnglogocom.png" alt="Card image">
+        </div>
+        <!-- <img *ngIf='job.id == "2"' style="height: 250px; width: 100%; display: block;" src="https://images.sftcdn.net/images/t_optimized,f_auto/p/2f4c04f4-96d0-11e6-9830-00163ed833e7/3163796423/java-runtime-environment-logo.png" alt="Card image">
+        <img *ngIf='job.id == "3"' style="height: 250px; width: 100%; display: block;" src="https://pluralsight.imgix.net/paths/path-icons/csharp-e7b8fcd4ce.png" alt="Card image">
+        <img *ngIf='job.id == "4"' style="height: 250px; width: 100%; display: block;" src="https://pluralsight.imgix.net/paths/path-icons/angular-14a0f6532f.png" alt="Card image">
+        --><div class="card-body"> 
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link" (click)='redirect()'>LinkedIn profile: {{candidate.linkedIn}}</a>
+          <a href="#" class="card-link">View projects</a>
+          <div class="row">
+              
+          <div class="col-md-5" *ngFor='let proj of candidate.projects' style="margin:10px">
+                <p><strong>{{proj.name}}</strong><br>{{proj.description}}</p>
+                <a href="#"><strong>{{proj.link}}</strong></a>
+              </div>
+          </div>
+          <p style="margin-top:15px;font-size:25px">The candidate has: <strong>{{candidate.points}} points</strong></p>
+        </div>
+        <div class="card-footer text-muted">
+          Last active: 17 minutes ago
+        </div>
+      </div>

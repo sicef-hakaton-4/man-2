@@ -1,0 +1,5 @@
+<navbar></navbar>
+<div class="col-md-12">
+    <candidates-view *ngIf="isEmployer"></candidates-view>
+    <job-applications-view *ngIf="!isEmployer"></job-applications-view>
+</div>

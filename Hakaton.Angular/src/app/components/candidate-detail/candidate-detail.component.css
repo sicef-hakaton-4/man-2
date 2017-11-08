@@ -1,0 +1,23 @@
+
+.projectContainer {
+    display: inline-block;
+    width: 25%;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: #5f0d5f;
+    color: wheat;
+}
+
+.projectContainer > a {
+    text-decoration: none;
+    color: wheat;
+}
+
+.techContainer {
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid black;
+    background-color: #5f0d5f;
+    color: wheat;
+}

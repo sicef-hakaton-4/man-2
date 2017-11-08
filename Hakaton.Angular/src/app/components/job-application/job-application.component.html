@@ -1,0 +1,19 @@
+<div class="card" style="margin:10px">
+    <h3 class="card-header">{{job.Name}}</h3>
+    <div class="card-body">
+      <h5 class="card-title">Some extensive description about the job</h5>
+      <h6 class="card-subtitle text-muted">.NET, C#, .NET Core</h6>
+    </div>
+    <img *ngIf='job.id == "1"' style="height: 250px; width: 100%; display: block;" src="https://docs.microsoft.com/en-us/dotnet/images/hub/net.svg" alt="Card image">
+    <img *ngIf='job.id == "2"' style="height: 250px; width: 100%; display: block;" src="https://images.sftcdn.net/images/t_optimized,f_auto/p/2f4c04f4-96d0-11e6-9830-00163ed833e7/3163796423/java-runtime-environment-logo.png" alt="Card image">
+    <img *ngIf='job.id == "3"' style="height: 250px; width: 100%; display: block;" src="https://pluralsight.imgix.net/paths/path-icons/csharp-e7b8fcd4ce.png" alt="Card image">
+    <img *ngIf='job.id == "4"' style="height: 250px; width: 100%; display: block;" src="https://pluralsight.imgix.net/paths/path-icons/angular-14a0f6532f.png" alt="Card image">
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link" (click)='redirect()'>View applicants</a>
+      <a class="card-link" (click)="applicationDetails()">View details</a>
+    </div>
+    <div class="card-footer text-muted">
+      2 days ago
+    </div>
+  </div>

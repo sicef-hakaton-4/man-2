@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JobMerge</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <!-- <input type="button" id="btnSend" value="Send" /> -->
+  <app-root></app-root>
+</body>
+
+<script type="text/javascript" src="http://localhost:54270/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://localhost:54270/Scripts/jquery.signalr-2.2.2.min.js"></script>
+<script type="text/javascript" src="http://localhost:54270/signalr/hubs"></script>
+<script type="text/javascript">
+  $(function() {
+
+      $.connection.hub.url = "http://localhost:54270/signalr/";
+      $.connection.hub.host = "http://localhost:54270/";
+
+      // Declare a proxy to reference the hub. 
+      var messageHub = $.connection.messageHub;
+      // Create a function that the hub can call to broadcast messages.
+      messageHub.client.addMessage = function(msg_id,senderId,recieverId,content) {
+          // Html encode display name and message. 
+          let msg = {
+            SenderId: senderId,
+            RecieverId: recieverId,
+            Content: content
+          };
+          localStorage.setItem('newMessage',JSON.stringify(msg));
+          console.log("recieved msg");
+          $("#newMsg").click();
+      };
+      // Start the connection.
+      $.connection.hub.start().done(function() {
+          $('#newMessage').keypress(function(event) {
+            if (event.keyCode == 13){
+              // Call the Send method on the hub. 
+              messageHub.server.sendMessage(localStorage.getItem('id'),localStorage.getItem('recieverId'),$("#newMessage").val());
+              // Clear text box and reset focus for next comment. 
+              $("#newMessage").focus();
+            }
+          });
+      });
+  });
+</script>
+</html>

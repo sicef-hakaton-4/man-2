@@ -1,0 +1,32 @@
+<navbar></navbar>
+<div class="row" style="margin-top:20px">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 ">
+        <div class="card text-black bg-light" style="height: 70vh; overflow-y: scroll" id="messageBody">
+            <div class="card-body">
+              <!-- <blockquote class="card-blockquote" style="display:inline-block">
+                
+              </blockquote> -->
+              <div class="msg-container" *ngFor='let msg of messages'>
+                <div *ngIf='msg.SenderId == getUser()' class="right-align">
+                    <message [message]='msg'></message>
+                </div>
+                <div *ngIf='msg.SenderId != getUser()' class="left-align">
+                    <message [message]='msg'></message>
+                </div>
+                </div>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-2"></div>
+    <div class="form-group col-md-8" style="margin-top:20px">
+      <input autofocus id="newMessage" [(ngModel)]='currentMessage' type="text" class="form-control">
+    </div>
+</div>
+<button class="hidden" id="newMsg" (click)='recieveNewMessage()'></button>
+<script>
+    function foo (){
+        document.getElementById("newMessage").focus();
+    }
+</script>

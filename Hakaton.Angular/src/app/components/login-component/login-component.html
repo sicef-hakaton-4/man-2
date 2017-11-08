@@ -1,0 +1,49 @@
+<div class="background_cover"></div>
+<div style="text-align: center; margin-top: 15px; color: white; font-size: 100px">
+  <p>JobMerge</p>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="absolute-center is-responsive">
+      <div id="logo-container"></div>
+      <div class="col-sm-12 col-md-12 form-group">
+        <form action="" id="loginForm">
+            <fieldset><div>
+                    <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input maxlength="50" class="form-control" type="text" required #username="ngModel" [(ngModel)]="authBody.username" name='username' placeholder="e-mail"/>
+                  </div>
+                  <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input maxlength="50" class="form-control" type="password" required #pass="ngModel" [(ngModel)]="authBody.password" name='password' placeholder="password"/>
+                  </div>
+                  <div class="form-group">
+                    <div *ngIf="isRegistered;else other_content">
+                        <button type="button" class="btn btn-primary btn-block" (click)="login()">Login</button>
+                    </div>        
+                    <ng-template #other_content>
+                        <div class="form-group">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" [value]="1" [(ngModel)]="authBody.role" checked="true">
+                              Candidate
+                            </label>
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" [value]="2" [(ngModel)]="authBody.role" checked="">
+                              Employer
+                            </label>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block" (click)="register()">Register</button>
+                    </ng-template>
+                </div>          
+                <div style="text-align:center">            
+                <a  style="margin-top:15px; cursor: pointer;" (click)="toggleRegister()" *ngIf="isRegistered">Not registered yet? Create an account now</a>
+                </div>
+                </div>
+            </fieldset>
+          
+    </form>
+    </div>
+</div>
+</div>
+</div>
+

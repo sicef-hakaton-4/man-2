@@ -1,0 +1,44 @@
+.background_cover{
+    background-image: url('https://images5.alphacoders.com/427/427294.jpg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width:100% ;
+    z-index:-100
+  }
+  
+  .container-login {
+    margin-left: 12px;
+    padding-top: 15px;
+  }
+  
+  .absolute-center {
+    opacity: 0.95;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+  }
+  
+  .absolute-center.is-responsive {
+    width: 50%;
+    height: 385px;
+    min-width: 250px;
+    max-width: 500px;
+    padding: 40px;
+  }
+  
+  #logo-container{
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width:150px;
+    height:150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image:url('https://londonentrepreneursnetwork.com/public/assets/frontend/profile_image/user-icon-png-pnglogocom.png');
+  }
+  
